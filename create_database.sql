@@ -141,6 +141,9 @@ IGNORE 1 ROWS
  @life_expectancy, @human_development_index)
 SET 
     date = STR_TO_DATE(@date, '%d-%m-%Y'),
+    iso_code = @iso_code,
+    continent = @continent,
+    location = @location,
     new_tests = NULLIF(@new_tests, ''),
     total_tests = NULLIF(@total_tests, ''),
     total_tests_per_thousand = NULLIF(@total_tests_per_thousand, ''),
@@ -173,4 +176,3 @@ SET
     hospital_beds_per_thousand = NULLIF(@hospital_beds_per_thousand, ''),
     life_expectancy = NULLIF(@life_expectancy, ''),
     human_development_index = NULLIF(@human_development_index, '');
-
